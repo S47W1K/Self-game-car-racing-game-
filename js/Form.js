@@ -29,6 +29,20 @@ class Form {
       player.name = this.input.value();
       playerCount+=1;
       player.index = playerCount;
+
+      if(player.index===1){
+        player.positionX=400
+      }
+      else if(player.index===2){
+        player.positionX=650
+      }
+      else if(player.index===3){
+        player.positionX=900
+      }
+      else{
+        player.positionX=1150
+      }
+
       player.update();
       player.updateCount(playerCount);
       this.greeting.html("Hello " + player.name)

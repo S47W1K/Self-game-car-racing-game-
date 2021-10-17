@@ -24,18 +24,7 @@ class Player {
 
   update(){
     var playerIndex = "players/player" + this.index;
-    if(this.index===1){
-      this.positionX=250
-    }
-    else if(this.index===2){
-      this.positionX=450
-    }
-    else if(this.index===3){
-      this.positionX=650
-    }
-    else{
-      this.positionX=850
-    }
+   
     
     database.ref(playerIndex).set({
       name:this.name,

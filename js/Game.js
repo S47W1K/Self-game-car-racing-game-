@@ -80,6 +80,20 @@ class Game {
           stroke(10);
           fill("red");
           ellipse(x,y,60,60);
+          if(player.rank===0){
+            text("Rank 1:",50,y-100)
+            text("Rank 2:",50,y-70)
+            text("Rank 3:",50,y-40)
+            text("Rank 4:",50,y-10)
+           }
+           else if(player.rank===1){
+            text("Rank 1:"+player.name,50,y-100)
+            text("Rank 2:",50,y-70)
+            text("Rank 3:",50,y-40)
+            text("Rank 4:",50,y-10)
+           }
+          textSize(30)
+          text(player.name,x-15,y-50)
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
@@ -140,13 +154,15 @@ class Game {
             player.update();
             }
 
-    if(player.distance > 4200){
+    if(player.positionY > 4200){
       gameState = 2;
       player.rank= player.rank+1
       Player.updateCarsAtEnd(player.rank)
     }
    
     drawSprites();
+   
+    //text("Rank 1:"+player.name,50,50)
     /*if(keyWentDown(UP_ARROW) && player.distance){
       ellipse(displayWidth/2+500,camera.position.y,200,200)
       text(10,displayWidth/2+500,camera.position.y)
